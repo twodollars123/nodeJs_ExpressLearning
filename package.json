@@ -1,0 +1,24 @@
+{
+  "name": "express_learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect  index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twodollars123/nodeJs_ExpressLearning.git"
+  },
+  "author": "twodollars",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twodollars123/nodeJs_ExpressLearning/issues"
+  },
+  "homepage": "https://github.com/twodollars123/nodeJs_ExpressLearning#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
