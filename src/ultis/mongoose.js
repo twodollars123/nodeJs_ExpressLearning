@@ -3,7 +3,7 @@ module.exports = {
     return array.map((item) => item.toObject());
   },
 
-  mongooseToObject: (mongoose) => {
+  mongooseToObject: function (mongoose) {
     return mongoose ? mongoose.toObject() : mongoose;
   },
 };
