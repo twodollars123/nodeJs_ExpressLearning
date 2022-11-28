@@ -7,8 +7,19 @@ class CourseController {
     course
       .findOne({ slug: req.params.slug })
       .then((item) => {
-        console.log(item);
         res.render("courseDetail", { item: mongooseToObject(item) });
+      })
+      .catch(next);
+  }
+
+  //[get] /courses/:id/edit
+  edit(req, res, next) {
+    course
+      .findOne({ _id: req.params.id })
+      .then((Course) => {
+        res.render("courses/updateCourse", {
+          Course: mongooseToObject(Course),
+        });
       })
       .catch(next);
   }
@@ -20,12 +31,19 @@ class CourseController {
 
   //post "course/store"
   store(req, res, next) {
-    console.log("A", req.body);
     const formData = req.body;
     const newCourse = new course(formData);
     newCourse
       .save()
       .then(() => res.redirect("/"))
+      .catch(next);
+  }
+
+  //[put] courses/:id
+  update(req, res, next) {
+    course
+      .updateOne({ _id: req.params.id }, req.body)
+      .then(() => res.redirect("/me/stored/courses"))
       .catch(next);
   }
 }
